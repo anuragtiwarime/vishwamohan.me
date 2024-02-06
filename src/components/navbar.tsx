@@ -15,7 +15,6 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <nav className="md:py-5 md:px-10 px-5 py-2 flex items-center justify-between">

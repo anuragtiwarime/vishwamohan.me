@@ -12,6 +12,7 @@ import {
 } from "./ui/drawer";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -57,13 +58,6 @@ const Navbar = () => {
           >
             <Link href="#">Connect</Link>
           </MenubarTrigger>
-          <MenubarTrigger
-            className={`${
-              pathname === "/email" ? "bg-accent text-accent-foreground" : ""
-            }`}
-          >
-            <Link href="#">@</Link>
-          </MenubarTrigger>
 
           <MenubarTrigger
             className={`${
@@ -72,12 +66,25 @@ const Navbar = () => {
           >
             <Link href="#">About me</Link>
           </MenubarTrigger>
-          <MenubarTrigger
-            className={`${
-              pathname === "/youtube" ? "bg-accent text-accent-foreground" : ""
-            }`}
-          >
-            <Link href="#">Youtube</Link>
+          <MenubarTrigger className="hover:bg-transparent">
+            <Link href="#">
+              <Image
+                src={"/assets/social/gmail.png"}
+                alt="email"
+                width={35}
+                height={35}
+              />
+            </Link>
+          </MenubarTrigger>
+          <MenubarTrigger className="hover:bg-transparent">
+            <Link href="#">
+              <Image
+                src={"/assets/social/youtube.svg"}
+                alt="email"
+                width={28}
+                height={20}
+              />
+            </Link>
           </MenubarTrigger>
         </MenubarMenu>
       </Menubar>
@@ -128,18 +135,17 @@ const Navbar = () => {
                 <Link href="#">
                   <Button
                     className="w-full"
-                    variant={pathname === "/email" ? "default" : "outline"}
-                  >
-                    @
-                  </Button>
-                </Link>
-
-                <Link href="#">
-                  <Button
-                    className="w-full"
                     variant={pathname === "/about" ? "default" : "outline"}
                   >
                     About me
+                  </Button>
+                </Link>
+                <Link href="#">
+                  <Button
+                    className="w-full"
+                    variant={pathname === "/email" ? "default" : "outline"}
+                  >
+                    Mail me
                   </Button>
                 </Link>
                 <Link href="#" className="col-span-2">

@@ -8,10 +8,12 @@ export default function Home() {
       <Navbar />
 
       {/* main section */}
-      <section className="h-[90vh] flex items-center md:py-5 md:px-10 px-5 py-2 bg-[url('/assets/mainBg.jpg')] bg-center bg-cover text-black">
-        <div className="w-96 space-y-3">
-          <h4 className="text-2xl font-medium">Lorem ipsum dolor sit amet.</h4>
-          <h1 className="text-6xl font-bold">Lorem ipsum</h1>
+      <section className="md:h-[90vh] flex items-center md:py-5 md:px-10 px-5 py-2 bg-[url('/assets/mainBg.jpg')] bg-center bg-cover text-black">
+        <div className="md:w-96 space-y-2 md:space-y-3">
+          <h4 className="text-lg md:text-2xl font-medium">
+            Lorem ipsum dolor sit amet.
+          </h4>
+          <h1 className="text-3xl md:text-6xl font-bold">Lorem ipsum</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
             cumque officia temporibus, accusamus nulla recusandae laudantium quo
@@ -25,14 +27,14 @@ export default function Home() {
       <section className="my-10 space-y-10 px-5 md:px-10">
         <div className="space-y-5">
           <h1 className="text-3xl text-center font-semibold">Featured on</h1>
-          <p className="text-center">
+          <p className="sm:text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
             obcaecati natus consectetur consequuntur maxime deleniti sapiente
             deserunt, nostrum magni commodi aspernatur vitae nulla, iure
             voluptates?
           </p>
         </div>
-        <div className="flex items-center gap-20 justify-center">
+        <div className="flex flex-wrap items-center gap-10 md:gap-20 justify-center">
           {featuredCompanyData.length &&
             featuredCompanyData.map((company, index) => {
               return (

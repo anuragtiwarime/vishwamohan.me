@@ -1,9 +1,10 @@
-import Image from "next/image";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="h-screen w-screen flex items-center justify-center">
-      <div className="text-center space-y-5 flex items-center flex-col">
+    <main className="">
+      <Navbar />
+      {/* <div className="text-center space-y-5 flex items-center flex-col">
         <div className="bg-gray-900 rounded-full relative w-fit">
           <Image
             className=""
@@ -21,7 +22,7 @@ export default function Home() {
             <span className="text-teal-500">:)</span>
           </p>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

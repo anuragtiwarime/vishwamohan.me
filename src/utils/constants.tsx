@@ -44,3 +44,57 @@ export const workedWithData: IDataType[] = [
     image: "/assets/workedWith/oracle.png",
   },
 ];
+
+export const edtechData: IDataType[] = [
+  {
+    name: "PW",
+    image: "/assets/edtech/pw.png",
+  },
+  {
+    name: "Scaler",
+    image: "/assets/edtech/scaler.png",
+  },
+  {
+    name: "Coding Ninjas",
+    image: "/assets/edtech/coding_ninjas.png",
+  },
+  {
+    name: "Up grad",
+    image: "/assets/edtech/upgrad.png",
+  },
+  {
+    name: "Great Learning",
+    image: "/assets/edtech/great_learning.png",
+  },
+  {
+    name: "Unacademy",
+    image: "/assets/edtech/unacademy.png",
+  },
+];
+
+export const socialMediaData: IDataType[] = [
+  {
+    name: "Youtube",
+    image: "/assets/socialMedia/youtube.svg",
+  },
+  {
+    name: "Linkedin",
+    image: "/assets/socialMedia/linkedin.png",
+  },
+  {
+    name: "Instagram",
+    image: "/assets/socialMedia/instagram.png",
+  },
+  {
+    name: "Whatsapp",
+    image: "/assets/socialMedia/whatsapp.png",
+  },
+  {
+    name: "Twitter",
+    image: "/assets/socialMedia/twitter.png",
+  },
+  {
+    name: "Facebook",
+    image: "/assets/socialMedia/facebook.png",
+  },
+];

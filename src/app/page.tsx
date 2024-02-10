@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
 
       {/* main section */}
-      <section className="md:h-[90vh] flex items-center md:py-5 md:px-10 px-5 py-2 bg-[url('/assets/mainBg.jpg')] bg-center bg-cover text-black">
+      <section className="md:h-[90vh] flex items-center md:py-5 md:px-10 px-5 py-2 bg-[url('/assets/mainBg.jpg')] bg-center bg-cover">
         <div className="md:w-96 space-y-2 md:space-y-3">
           <h4 className="text-lg md:text-2xl font-medium">
             Lorem ipsum dolor sit amet.
@@ -46,7 +46,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="relative w-40 h-40 bg-white rounded-full shadow-lg shadow-gray-700"
+                  className="relative w-40 h-40 bg-white rounded-full shadow-md"
                 >
                   <Image
                     className="object-contain p-2"
@@ -77,7 +77,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="relative w-40 h-14 bg-white rounded-md shadow-md shadow-gray-700"
+                  className="relative w-40 h-14 bg-white rounded-md shadow-md"
                 >
                   <Image
                     className="object-cover px-5 py-2"
@@ -110,7 +110,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="relative w-40 h-14 bg-white rounded-md shadow-md shadow-gray-700"
+                  className="relative w-40 h-14 bg-white rounded-md shadow-md"
                 >
                   <Image
                     className="object-contain px-5 py-2"
@@ -133,7 +133,7 @@ export default function Home() {
             socialMediaData.map((media, index) => {
               return (
                 <Link key={index} href={"#"}>
-                  <div className="relative w-10 h-10 bg-white rounded-md">
+                  <div className="relative w-10 h-10 rounded-md shadow-md">
                     <Image
                       src={media?.image}
                       alt={media.name}
@@ -145,6 +145,13 @@ export default function Home() {
               );
             })}
         </div>
+      </section>
+
+      {/* students taught */}
+      <section className="my-10 space-y-10 px-5 md:px-10">
+        {/* <h1 className="text-3xl text-center font-semibold">
+          Students taught so far
+        </h1> */}
       </section>
     </main>
   );

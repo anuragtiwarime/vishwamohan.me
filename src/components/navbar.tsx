@@ -20,10 +20,7 @@ const Navbar = () => {
   return (
     <nav className="md:py-5 md:px-10 px-5 py-2 flex items-center justify-between">
       {/* logo */}
-      <div className="flex items-center gap-2">
-        <div className="w-[2px] md:w-1 h-6 md:h-8 bg-cyan-500" />
-        <p className="text-lg md:text-2xl font-semibold">Vishwa Mohan</p>
-      </div>
+      <p className="text-lg md:text-2xl font-semibold">Vishwa Mohan</p>
 
       {/* menu items for desktop view */}
       <Menubar className="hidden md:flex">

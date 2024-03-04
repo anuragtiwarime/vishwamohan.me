@@ -1,126 +1,129 @@
-import Navbar from "@/components/navbar";
-import {
-  edtechData,
-  featuredCompanyData,
-  socialMediaData,
-  workedWithData,
-} from "@/utils/constants";
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { edtechData, socialMediaData, workedWithData } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [studentCounter, setStudentCounter] = useState(7500);
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      if (studentCounter > 1300000) {
+        clearInterval(intervalID);
+        return;
+      }
+      setStudentCounter(studentCounter + 9865);
+    }, 200);
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, [studentCounter]);
+
   return (
     <main className="">
-      <Navbar />
-
       {/* main section */}
-      <section className="md:h-[90vh] flex items-center md:py-5 md:px-10 px-5 py-2 bg-[url('/assets/mainBg.jpg')] bg-center bg-cover">
-        <div className="md:w-96 space-y-2 md:space-y-3">
-          <h4 className="text-lg md:text-2xl font-medium">
-            Lorem ipsum dolor sit amet.
-          </h4>
-          <h1 className="text-3xl md:text-6xl font-bold">Lorem ipsum</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            cumque officia temporibus, accusamus nulla recusandae laudantium quo
-            consectetur possimus deleniti atque ratione id quisquam cum aut
-            quibusdam. Debitis, placeat nesciunt?
-          </p>
+      <section className="w-full h-[800px] bg-[url('/assets/mainBg.png')] bg-center bg-cover">
+        <div className="float-end p-5 flex items-center gap-5">
+          <Link href={"#socialMedia"}>
+            <Button variant={"secondary"} className="font-semibold">
+              Connect
+            </Button>
+          </Link>
+          <Link href={""}>
+            <Button variant={"secondary"} className="font-semibold">
+              Blogs
+            </Button>
+          </Link>
         </div>
       </section>
 
-      {/* featured on section */}
-      <section className="my-10 space-y-10 px-5 md:px-10">
-        <div className="space-y-5">
-          <h1 className="text-3xl text-center font-semibold">Featured on</h1>
-          <p className="sm:text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            obcaecati natus consectetur consequuntur maxime deleniti sapiente
-            deserunt, nostrum magni commodi aspernatur vitae nulla, iure
-            voluptates?
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-10 md:gap-20 justify-center">
-          {featuredCompanyData.length &&
-            featuredCompanyData.map((company, index) => {
-              return (
-                <div
-                  key={index}
-                  className="relative w-40 h-40 bg-white rounded-full shadow-md"
-                >
-                  <Image
-                    className="object-contain p-2"
-                    src={company?.image}
-                    fill
-                    alt={company.name}
-                  />
-                </div>
-              );
-            })}
-        </div>
+      {/* teaching section */}
+      <section className="p-10 bg-gray-100">
+        <h1 className="text-3xl font-semibold text-center">
+          Loves Tech and Teaching 🧑‍💻
+        </h1>
       </section>
 
-      {/* worked with section */}
-      <section className="my-10 space-y-10 px-5 md:px-10">
-        <div className="space-y-5">
-          <h1 className="text-3xl text-center font-semibold">Worked with</h1>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            obcaecati natus consectetur consequuntur maxime deleniti sapiente
-            deserunt, nostrum magni commodi aspernatur vitae nulla, iure
-            voluptates?
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-14 justify-center">
-          {workedWithData.length &&
-            workedWithData.map((company, index) => {
-              return (
-                <div
-                  key={index}
-                  className="relative w-40 h-14 bg-white rounded-md shadow-md"
-                >
-                  <Image
-                    className="object-cover px-5 py-2"
-                    src={company?.image}
-                    fill
-                    alt={company.name}
-                  />
-                </div>
-              );
-            })}
-        </div>
-      </section>
+      <section className="flex gap-10 my-20 space-y-10 px-5 md:px-10">
+        <div className="w-[70%] space-y-10">
+          {/* experience with section */}
+          <div className="flex flex-col gap-5">
+            <div className="space-y-5">
+              <h1 className="text-3xl font-semibold">
+                13+ Years of Experience
+              </h1>
+            </div>
+            <div className="flex flex-wrap items-center gap-5 justify-center">
+              {workedWithData.length &&
+                workedWithData.map((company, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="relative w-40 h-14 bg-white rounded-md shadow-md"
+                    >
+                      <Image
+                        className="object-cover px-5 py-2"
+                        src={company?.image}
+                        fill
+                        alt={company.name}
+                      />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
 
-      {/* worked with edtechs section */}
-      <section className="my-10 space-y-10 px-5 md:px-10">
-        <div className="space-y-5">
-          <h1 className="text-3xl text-center font-semibold">
-            Ed-tech Journey
-          </h1>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            obcaecati natus consectetur consequuntur maxime deleniti sapiente
-            deserunt, nostrum magni commodi aspernatur vitae nulla, iure
-            voluptates?
-          </p>
+          {/* worked with section */}
+          <div className="flex flex-col gap-5">
+            <div className="space-y-5">
+              <h1 className="text-3xl font-semibold">
+                {studentCounter}+ Students Impacted
+              </h1>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-5 justify-center">
+              {edtechData.length &&
+                edtechData.map((company, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="relative w-40 h-14 bg-white rounded-md shadow-md"
+                    >
+                      <Image
+                        className="object-contain px-5 py-2"
+                        src={company?.image}
+                        fill
+                        alt={company.name}
+                      />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-14 justify-center">
-          {edtechData.length &&
-            edtechData.map((company, index) => {
-              return (
-                <div
-                  key={index}
-                  className="relative w-40 h-14 bg-white rounded-md shadow-md"
-                >
-                  <Image
-                    className="object-contain px-5 py-2"
-                    src={company?.image}
-                    fill
-                    alt={company.name}
-                  />
-                </div>
-              );
-            })}
+
+        {/* tools and technology */}
+        <div className="w-[30%] self-start space-y-5">
+          <h1 className="text-3xl font-semibold">Tech Stack</h1>
+          <ul className="space-y-5">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+              Full Stack Development
+            </li>
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+              Data Science
+            </li>
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+              System Design
+            </li>
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+              Cyber Security
+            </li>
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+              Dev Ops
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -128,7 +131,10 @@ export default function Home() {
       <section className="my-10 space-y-10 px-5 md:px-10">
         <h1 className="text-3xl text-center font-semibold">Find Vishwa on</h1>
 
-        <div className="flex flex-wrap items-center gap-14 justify-center">
+        <div
+          id="socialMedia"
+          className="flex flex-wrap items-center gap-14 justify-center"
+        >
           {socialMediaData.length &&
             socialMediaData.map((media, index) => {
               return (
@@ -145,13 +151,6 @@ export default function Home() {
               );
             })}
         </div>
-      </section>
-
-      {/* students taught */}
-      <section className="my-10 space-y-10 px-5 md:px-10">
-        {/* <h1 className="text-3xl text-center font-semibold">
-          Students taught so far
-        </h1> */}
       </section>
     </main>
   );

@@ -40,13 +40,13 @@ export default function Home() {
       </section>
 
       {/* teaching section */}
-      <section className="p-10 bg-gray-100">
-        <h1 className="text-3xl font-semibold text-center">
+      <section className="p-10 bg-gradient-to-r from-gray-600 to-gray-700">
+        <h1 className="text-3xl font-semibold text-center text-white">
           Loves Tech and Teaching 🧑‍💻
         </h1>
       </section>
 
-      <section className="flex gap-10 my-20 space-y-10 px-5 md:px-10">
+      <section className="flex gap-10 py-20 space-y-10 px-5 md:px-10 bg-gray-50">
         <div className="w-[70%] space-y-10">
           {/* experience with section */}
           <div className="flex flex-col gap-5">
@@ -108,19 +108,19 @@ export default function Home() {
         <div className="w-[30%] self-start space-y-5">
           <h1 className="text-3xl font-semibold">Tech Stack</h1>
           <ul className="space-y-5">
-            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg bg-white">
               Full Stack Development
             </li>
-            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg bg-white">
               Data Science
             </li>
-            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg bg-white">
               System Design
             </li>
-            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg bg-white">
               Cyber Security
             </li>
-            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg">
+            <li className="px-4 py-2 rounded-md shadow-md font-medium text-lg bg-white">
               Dev Ops
             </li>
           </ul>
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* social media section */}
-      <section className="my-10 space-y-10 px-5 md:px-10">
+      <section className="py-10 space-y-10 px-5 md:px-10 bg-gray-50">
         <h1 className="text-3xl text-center font-semibold">Find Vishwa on</h1>
 
         <div

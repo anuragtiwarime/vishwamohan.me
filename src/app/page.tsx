@@ -46,6 +46,7 @@ export default function Home() {
         </h1>
       </section>
 
+      {/* for experience, worked with and tech section */}
       <section className="flex gap-10 py-20 space-y-10 px-5 md:px-10 bg-gray-50">
         <div className="w-[70%] space-y-10">
           {/* experience with section */}
@@ -124,6 +125,27 @@ export default function Home() {
               Dev Ops
             </li>
           </ul>
+        </div>
+      </section>
+
+      {/* testimonial section */}
+      <section className="space-y-10 px-5 md:px-10 bg-gray-50">
+        <h1 className="text-3xl font-semibold text-center">
+          What my students says?
+        </h1>
+        <div className="flex items-center justify-center gap-10 flex-wrap">
+          {Array.from({ length: 6 }).map((_, index) => {
+            return (
+              <div key={index} className="relative h-96 w-80">
+                <Image
+                  src={`/assets/testimonials/testimonial${index + 1}.jpg`}
+                  alt={`testimonial${index}`}
+                  fill
+                  className="object-center rounded-md hover:shadow-md transition-all duration-200 ease-in-out"
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
 
